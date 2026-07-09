@@ -15,7 +15,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
-import { Route as ApiPublicSeedAdminsRouteImport } from './routes/api/public/seed-admins'
 
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
@@ -46,11 +45,6 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const ApiPublicSeedAdminsRoute = ApiPublicSeedAdminsRouteImport.update({
-  id: '/api/public/seed-admins',
-  path: '/api/public/seed-admins',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -58,7 +52,6 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
-  '/api/public/seed-admins': typeof ApiPublicSeedAdminsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -66,7 +59,6 @@ export interface FileRoutesByTo {
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
-  '/api/public/seed-admins': typeof ApiPublicSeedAdminsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -76,25 +68,12 @@ export interface FileRoutesById {
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
-  '/api/public/seed-admins': typeof ApiPublicSeedAdminsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/auth'
-    | '/admin'
-    | '/blog/$slug'
-    | '/blog/'
-    | '/api/public/seed-admins'
+  fullPaths: '/' | '/auth' | '/admin' | '/blog/$slug' | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/auth'
-    | '/admin'
-    | '/blog/$slug'
-    | '/blog'
-    | '/api/public/seed-admins'
+  to: '/' | '/auth' | '/admin' | '/blog/$slug' | '/blog'
   id:
     | '__root__'
     | '/'
@@ -103,7 +82,6 @@ export interface FileRouteTypes {
     | '/_authenticated/admin'
     | '/blog/$slug'
     | '/blog/'
-    | '/api/public/seed-admins'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -112,7 +90,6 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
-  ApiPublicSeedAdminsRoute: typeof ApiPublicSeedAdminsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -159,13 +136,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/api/public/seed-admins': {
-      id: '/api/public/seed-admins'
-      path: '/api/public/seed-admins'
-      fullPath: '/api/public/seed-admins'
-      preLoaderRoute: typeof ApiPublicSeedAdminsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -186,7 +156,6 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
-  ApiPublicSeedAdminsRoute: ApiPublicSeedAdminsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
