@@ -3,18 +3,12 @@ import { useSuspenseQuery, queryOptions } from "@tanstack/react-query";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { getRecentPosts, type PublicPost } from "@/lib/public.functions";
+import { formatDate } from "@/lib/utils";
 
 export const recentPostsQuery = queryOptions({
   queryKey: ["posts", "recent", 3],
   queryFn: () => getRecentPosts({ data: { limit: 3 } }),
 });
-
-function formatDate(d: string | null) {
-  if (!d) return "";
-  return new Date(d).toLocaleDateString("id-ID", {
-    day: "numeric", month: "long", year: "numeric",
-  });
-}
 
 function excerpt(post: PublicPost) {
   const src = post.excerpt || post.content || "";

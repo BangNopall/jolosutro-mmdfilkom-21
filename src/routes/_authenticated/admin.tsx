@@ -104,16 +104,24 @@ function BlogAdmin() {
   }
 
   async function onToggle(p: AdminPost) {
-    await toggle({ data: { id: p.id, is_published: !p.is_published } });
-    qc.invalidateQueries({ queryKey: ["admin", "posts"] });
-    qc.invalidateQueries({ queryKey: ["posts"] });
+    try {
+      await toggle({ data: { id: p.id, is_published: !p.is_published } });
+      qc.invalidateQueries({ queryKey: ["admin", "posts"] });
+      qc.invalidateQueries({ queryKey: ["posts"] });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Gagal mengubah status.");
+    }
   }
 
   async function onDelete(p: AdminPost) {
     if (!confirm(`Hapus "${p.title}"?`)) return;
-    await del({ data: { id: p.id } });
-    qc.invalidateQueries({ queryKey: ["admin", "posts"] });
-    qc.invalidateQueries({ queryKey: ["posts"] });
+    try {
+      await del({ data: { id: p.id } });
+      qc.invalidateQueries({ queryKey: ["admin", "posts"] });
+      qc.invalidateQueries({ queryKey: ["posts"] });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Gagal menghapus post.");
+    }
   }
 
   return (
@@ -247,8 +255,12 @@ function FeedbackAdmin() {
 
   async function onDelete(f: FeedbackRow) {
     if (!confirm(`Hapus masukan dari ${f.name}?`)) return;
-    await del({ data: { id: f.id } });
-    qc.invalidateQueries({ queryKey: ["admin", "feedback"] });
+    try {
+      await del({ data: { id: f.id } });
+      qc.invalidateQueries({ queryKey: ["admin", "feedback"] });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Gagal menghapus masukan.");
+    }
   }
 
   return (

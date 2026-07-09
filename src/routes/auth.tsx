@@ -16,8 +16,10 @@ function AuthPage() {
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate({ to: "/admin", replace: true });
+    supabase.auth.getSession().then(({ data, error }) => {
+      if (!error && data.session) navigate({ to: "/admin", replace: true });
+    }).catch(() => {
+      // Supabase unavailable — stay on login page
     });
   }, [navigate]);
 

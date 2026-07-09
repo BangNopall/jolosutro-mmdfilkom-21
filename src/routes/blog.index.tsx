@@ -4,6 +4,7 @@ import { CalendarDays, ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { getAllPublishedPosts } from "@/lib/public.functions";
+import { formatDate } from "@/lib/utils";
 
 const allPostsQuery = queryOptions({
   queryKey: ["posts", "all"],
@@ -23,10 +24,6 @@ export const Route = createFileRoute("/blog/")({
   notFoundComponent: () => <div className="p-8">Tidak ditemukan.</div>,
 });
 
-function fmt(d: string | null) {
-  if (!d) return "";
-  return new Date(d).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
-}
 
 function BlogList() {
   const { data: posts } = useSuspenseQuery(allPostsQuery);
@@ -57,7 +54,7 @@ function BlogList() {
                 </Link>
                 <div className="p-5">
                   <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <CalendarDays className="h-3.5 w-3.5" /> {fmt(p.published_at || p.created_at)}
+                    <CalendarDays className="h-3.5 w-3.5" /> {formatDate(p.published_at || p.created_at)}
                   </div>
                   <h2 className="mt-2 font-display text-lg font-bold leading-snug">
                     <Link to="/blog/$slug" params={{ slug: p.slug }} className="hover:text-primary">{p.title}</Link>

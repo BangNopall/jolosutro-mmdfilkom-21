@@ -5,6 +5,7 @@ import { ArrowLeft, CalendarDays, User } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { getPostBySlug } from "@/lib/public.functions";
+import { formatDate } from "@/lib/utils";
 
 const postQuery = (slug: string) =>
   queryOptions({
@@ -44,10 +45,6 @@ export const Route = createFileRoute("/blog/$slug")({
   ),
 });
 
-function fmt(d: string | null) {
-  return d ? new Date(d).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" }) : "";
-}
-
 function PostPage() {
   const { slug } = Route.useParams();
   const { data: post } = useSuspenseQuery(postQuery(slug));
@@ -62,7 +59,7 @@ function PostPage() {
           </Link>
           <h1 className="mt-4 font-display text-3xl font-bold text-primary md:text-5xl">{post.title}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-1"><CalendarDays className="h-4 w-4" />{fmt(post.published_at || post.created_at)}</span>
+            <span className="inline-flex items-center gap-1"><CalendarDays className="h-4 w-4" />{formatDate(post.published_at || post.created_at)}</span>
             <span className="inline-flex items-center gap-1"><User className="h-4 w-4" />{post.author}</span>
           </div>
           {post.cover_image && (

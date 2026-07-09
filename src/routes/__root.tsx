@@ -37,7 +37,6 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
   const router = useRouter();
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
@@ -89,12 +88,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: SITE_TITLE },
       { name: "twitter:description", content: SITE_DESC },
-      { title: "Website Pantai Jolosutro" },
-      { property: "og:title", content: "Website Pantai Jolosutro" },
-      { name: "twitter:title", content: "Website Pantai Jolosutro" },
-      { name: "description", content: "Jolosutro Shores is a single-page tourism website for Jolosutro Beach, featuring smooth scrolling navigation and a blog with an admin dashboard." },
-      { property: "og:description", content: "Jolosutro Shores is a single-page tourism website for Jolosutro Beach, featuring smooth scrolling navigation and a blog with an admin dashboard." },
-      { name: "twitter:description", content: "Jolosutro Shores is a single-page tourism website for Jolosutro Beach, featuring smooth scrolling navigation and a blog with an admin dashboard." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" },
       { name: "twitter:image", content: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" },
     ],
