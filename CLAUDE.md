@@ -2,11 +2,11 @@
 
 ## Commands
 
-- **Dev server:** `bun run dev`
-- **Build:** `bun run build`
-- **Lint:** `bun run lint`
-- **Format:** `bun run format`
-- **Type check:** `bunx tsc --noEmit`
+- **Dev server:** `npm run dev`
+- **Build:** `npm run build`
+- **Lint:** `npm run lint`
+- **Format:** `npm run format`
+- **Type check:** `npx tsc --noEmit`
 
 ## Stack
 
@@ -14,7 +14,7 @@
 - Vite + Tailwind CSS v4 + shadcn/ui (new-york style) + Radix UI
 - Supabase (auth + DB + storage) — credentials in `.env`
 - TypeScript strict mode; path alias `@/*` → `src/*`
-- Package manager: **Bun**
+- Package manager: **npm**
 
 ## Lovable Integration
 

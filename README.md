@@ -36,7 +36,7 @@ Website resmi **Pantai Jolosutro**, destinasi wisata pantai selatan Jawa Timur y
 | Validasi | Zod |
 | Bundler | Vite 8 |
 | Server Runtime | Nitro (Cloudflare Workers) |
-| Package Manager | Bun |
+| Package Manager | npm |
 | Language | TypeScript (strict) |
 
 > Dokumentasi tech stack lengkap tersedia di [TECH_STACK.md](./TECH_STACK.md).
@@ -105,7 +105,8 @@ supabase/
 
 ### Prasyarat
 
-- [Bun](https://bun.sh/) versi terbaru
+- [Node.js](https://nodejs.org/) v18 atau lebih baru
+- [npm](https://www.npmjs.com/) (sudah termasuk dalam Node.js)
 - Akun [Supabase](https://supabase.com/) (project aktif)
 
 ### Instalasi
@@ -116,7 +117,7 @@ git clone https://github.com/<username>/jolosutro-beach-guide.git
 cd jolosutro-beach-guide
 
 # Install dependencies
-bun install
+npm install
 ```
 
 ### Konfigurasi Environment
@@ -136,7 +137,7 @@ SUPABASE_SERVICE_ROLE_KEY=<service-role-key>
 ### Menjalankan Dev Server
 
 ```bash
-bun run dev
+npm run dev
 ```
 
 Buka [http://localhost:3000](http://localhost:3000) di browser.
@@ -177,12 +178,12 @@ VALUES ('<user-uuid-dari-auth.users>', 'admin');
 
 | Perintah | Fungsi |
 |---|---|
-| `bun run dev` | Menjalankan dev server |
-| `bun run build` | Build production |
-| `bun run preview` | Preview hasil build |
-| `bun run lint` | Lint dengan ESLint |
-| `bun run format` | Format dengan Prettier |
-| `bunx tsc --noEmit` | Type check |
+| `npm run dev` | Menjalankan dev server |
+| `npm run build` | Build production |
+| `npm run preview` | Preview hasil build |
+| `npm run lint` | Lint dengan ESLint |
+| `npm run format` | Format dengan Prettier |
+| `npx tsc --noEmit` | Type check |
 
 ---
 
@@ -232,7 +233,7 @@ Font:
 Project di-deploy ke **Cloudflare Workers** via Nitro:
 
 ```bash
-bun run build
+npm run build
 # Output ada di .output/server/ — siap deploy ke Cloudflare Workers
 ```
 

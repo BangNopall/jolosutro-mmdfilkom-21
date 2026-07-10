@@ -17,7 +17,7 @@
 | UI Components | shadcn/ui + Radix UI |
 | Bundler | Vite 8 |
 | Server Runtime | Nitro (Cloudflare Workers) |
-| Package Manager | Bun |
+| Package Manager | npm |
 | Language | TypeScript (strict mode) |
 
 ---
@@ -148,10 +148,10 @@ user_roles   — RBAC: relasi user_id → role ENUM('admin')
 - Custom `src/server.ts` untuk normalisasi error h3
 - **Versi:** `3.0.260603-beta`
 
-### Bun
-- Package manager dan JavaScript runtime
-- Menggantikan Node.js + npm/pnpm
-- Konfigurasi di `bunfig.toml`
+### npm
+- Package manager bawaan Node.js
+- Digunakan untuk install dependencies dan menjalankan scripts
+- Lock file: `package-lock.json`
 
 ### TypeScript
 - Strict mode aktif
