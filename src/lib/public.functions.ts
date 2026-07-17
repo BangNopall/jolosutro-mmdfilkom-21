@@ -52,6 +52,28 @@ export const getAllPublishedPosts = createServerFn({ method: "GET" }).handler(
   },
 );
 
+export const getRecommendedPosts = createServerFn({ method: "GET" })
+  .inputValidator((input: { excludeSlug: string; limit?: number }) =>
+    z
+      .object({
+        excludeSlug: z.string().min(1).max(200),
+        limit: z.number().int().min(1).max(20).optional(),
+      })
+      .parse(input),
+  )
+  .handler(async ({ data }): Promise<PublicPost[]> => {
+    const supabase = serverPublicClient();
+    const { data: posts, error } = await supabase
+      .from("blog_posts")
+      .select("id, title, slug, cover_image, excerpt, content, author, published_at, created_at")
+      .neq("slug", data.excludeSlug)
+      .eq("is_published", true)
+      .order("published_at", { ascending: false, nullsFirst: false })
+      .limit(data.limit ?? 3);
+    if (error) throw new Error(error.message);
+    return posts ?? [];
+  });
+
 export const getPostBySlug = createServerFn({ method: "GET" })
   .inputValidator((input: { slug: string }) =>
     z.object({ slug: z.string().min(1).max(200) }).parse(input),
