@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/site/Reveal";
+import { WavePatternTop } from "../ui/wave-pattern/WavePattern";
 
 const GALLERY = [
   "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=70",
@@ -16,8 +17,8 @@ const STATS = [
 
 export function About() {
   return (
-    <section id="tentang" className="bg-background py-20 md:py-28">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-6">
+    <section id="tentang" className="relative bg-background pt-20 pb-32 md:pt-28 md:pb-40">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-6">
         <Reveal className="flex flex-col justify-center">
           <span className="mb-3 inline-flex w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
             Tentang Kami
@@ -70,6 +71,7 @@ export function About() {
           ))}
         </Reveal>
       </div>
+      <WavePatternTop/>
     </section>
   );
 }

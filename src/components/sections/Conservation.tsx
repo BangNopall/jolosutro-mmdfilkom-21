@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/site/Reveal";
 import { ShieldCheck, HeartHandshake, Leaf } from "lucide-react";
+import { WavePatternBottom } from "../ui/wave-pattern/WavePattern";
 
 const GALLERY = [
   "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=800&q=70",
@@ -15,8 +16,8 @@ const POINTS = [
 
 export function Conservation() {
   return (
-    <section id="konservasi" className="relative overflow-hidden bg-background py-20 md:py-28">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2 md:items-center md:px-6">
+    <section id="konservasi" className="relative overflow-hidden bg-background pb-20 pt-28 md:pb-28 md:pt-36">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2 md:items-center md:px-6">
         <Reveal>
           <div className="relative">
             <img
@@ -73,6 +74,7 @@ export function Conservation() {
           </div>
         </Reveal>
       </div>
+      <WavePatternBottom/>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/site/Reveal";
 import { Sprout, BookOpen, Bike } from "lucide-react";
+import { WavePatternTop } from "../ui/wave-pattern/WavePattern";
 
 const GALLERY = [
   "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=70",
@@ -15,7 +16,7 @@ const FEATURES = [
 
 export function EcoPark() {
   return (
-    <section id="ecopark" className="bg-background py-20 md:py-28">
+    <section id="ecopark" className="relative bg-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="inline-flex rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
@@ -56,6 +57,7 @@ export function EcoPark() {
           ))}
         </Reveal>
       </div>
+        <WavePatternTop/>
     </section>
   );
 }
