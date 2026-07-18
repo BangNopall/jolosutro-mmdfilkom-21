@@ -1,8 +1,9 @@
 import { Reveal } from "@/components/site/Reveal";
+import { WavePatternBottom } from "../ui/wave-pattern/WavePattern";
 
 export function Video() {
   return (
-    <section id="video" className="bg-background py-20 md:py-28">
+    <section id="video" className="relative bg-background py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
@@ -32,6 +33,8 @@ export function Video() {
           </div>
         </Reveal>
       </div>
+      <WavePatternBottom/>
     </section>
+
   );
 }
