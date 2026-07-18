@@ -46,7 +46,7 @@ export function RichTextEditor({ value, onChange, disabled = false }: Props) {
     editorProps: {
       attributes: {
         class:
-          "prose prose-slate max-w-none min-h-[300px] p-4 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-b-xl border-x border-b border-input bg-background font-mono text-sm",
+          "prose prose-slate max-w-none min-h-[300px] p-4 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-b-xl border-x border-b border-input bg-background [&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4",
       },
     },
   });
