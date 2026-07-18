@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import ReactMarkdown from "react-markdown";
+import DOMPurify from "isomorphic-dompurify";
 import { ArrowLeft, CalendarDays, User } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -95,7 +96,15 @@ function PostPage() {
               )}
               {post.excerpt && <p className="mt-6 text-lg text-muted-foreground">{post.excerpt}</p>}
               <div className="prose prose-slate mt-8 max-w-none prose-headings:font-display prose-headings:text-primary prose-a:text-primary">
-                <ReactMarkdown>{post.content || ""}</ReactMarkdown>
+                {(post.content || "").trimStart().startsWith("<") ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(post.content || ""),
+                    }}
+                  />
+                ) : (
+                  <ReactMarkdown>{post.content || ""}</ReactMarkdown>
+                )}
               </div>
             </article>
 
