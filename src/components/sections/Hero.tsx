@@ -1,7 +1,6 @@
 import { ChevronDown, MapPin } from "lucide-react";
 
-const HERO_BG =
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80";
+const HERO_BG = "/img/background-jolosutro.png";
 
 export function Hero() {
   return (
@@ -20,15 +19,6 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 pt-24 pb-16 text-center text-white md:px-6">
-        <div className="mb-6 flex flex-wrap justify-center gap-2">
-          <span className="rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-xs font-medium backdrop-blur md:text-sm">
-            🎟️ Tiket Masuk GRATIS
-          </span>
-          <span className="rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-xs font-medium backdrop-blur md:text-sm">
-            🚗 Area Parkir Luas
-          </span>
-        </div>
-
         <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight drop-shadow md:text-7xl lg:text-8xl">
           Pantai Jolosutro
         </h1>
