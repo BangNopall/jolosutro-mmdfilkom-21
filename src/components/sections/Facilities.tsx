@@ -1,20 +1,26 @@
 import { Reveal } from "@/components/site/Reveal";
 import {
-  Fish, Camera, Info, Bath, Church, Droplets, TreePine,
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+import {
+  Camera, Info, Bath, Church, TreePine,
   Tent, Car, Waves,
 } from "lucide-react";
 
 const ITEMS = [
-  { icon: Fish, label: "Spot Mancing" },
-  { icon: Camera, label: "Spot Foto" },
-  { icon: Info, label: "Pusat Informasi Wisata" },
-  { icon: Bath, label: "Kamar Mandi / Toilet" },
-  { icon: Church, label: "Mushola" },
-  { icon: Droplets, label: "Fasilitas Air Bersih" },
-  { icon: TreePine, label: "Area Bersantai" },
-  { icon: Tent, label: "Area Camping" },
-  { icon: Car, label: "Area Parkir Luas" },
-  { icon: Waves, label: "Pantai Bersih" },
+  { icon: Camera, label: "Spot Foto",  img: "/images/fasilitas/spot-foto.png"},
+  { icon: Info, label: "Pusat Informasi Wisata", img: "/images/fasilitas/DUMMY.jpg" },
+  { icon: Bath, label: "Kamar Mandi / Toilet", img: "/images/fasilitas/kamar-mandi.png"},
+  { icon: Church, label: "Mushola", img: "/images/fasilitas/mushola.png"},
+  { icon: TreePine, label: "Area Bersantai", img: "/images/fasilitas/area-bersantai.png"},
+  { icon: Tent, label: "Area Camping", img: "/images/fasilitas/area-camping.png"},
+  { icon: Car, label: "Area Parkir Luas", img: "/images/fasilitas/area-parkir.png"},
+  { icon: Waves, label: "Pantai Bersih", img: "/images/fasilitas/pantai-bersih.png"},
 ];
 
 export function Facilities() {
@@ -35,16 +41,39 @@ export function Facilities() {
         </Reveal>
 
         <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-          {ITEMS.map(({ icon: Icon, label }, i) => (
+          {ITEMS.map(({ icon: Icon, label, img }, i) => (
             <Reveal key={label} delay={i * 40}>
-              <div className="group flex h-full flex-col items-center gap-3 rounded-2xl bg-card p-5 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-soft md:p-6">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <Icon className="h-7 w-7" strokeWidth={1.75} />
-                </div>
-                <div className="text-sm font-semibold text-foreground md:text-base">
-                  {label}
-                </div>
-              </div>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="group flex h-full cursor-pointer flex-col items-center gap-3 rounded-2xl bg-card p-5 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-soft md:p-6">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Icon
+                        className="h-7 w-7 transition-transform duration-300 group-hover:scale-110"
+                        strokeWidth={1.75}
+                      />
+                    </div>
+
+                    <div className="text-sm font-semibold text-foreground md:text-base">
+                      {label}
+                    </div>
+                  </div>
+                </DialogTrigger>
+
+                <DialogContent className="sm:max-w-xl">
+                  <DialogHeader>
+                    <DialogTitle>{label}</DialogTitle>
+                  </DialogHeader>
+
+                  <img
+                    src={img}
+                    alt={label}
+                    className="w-full rounded-xl object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = "/images/fasilitas/placeholder.png";
+                    }}
+                  />
+                </DialogContent>
+              </Dialog>
             </Reveal>
           ))}
         </div>
