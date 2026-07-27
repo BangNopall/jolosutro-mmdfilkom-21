@@ -14,7 +14,7 @@ import {
 
 const ITEMS = [
   { icon: Camera, label: "Spot Foto",  img: "/images/fasilitas/spot-foto.png"},
-  { icon: Info, label: "Pusat Informasi Wisata", img: "/images/fasilitas/DUMMY.jpg" },
+  { icon: Info, label: "Pusat Informasi Wisata", img: "/images/fasilitas/pusat-informasi-satwa.png" },
   { icon: Bath, label: "Kamar Mandi / Toilet", img: "/images/fasilitas/kamar-mandi.png"},
   { icon: Church, label: "Mushola", img: "/images/fasilitas/mushola.png"},
   { icon: TreePine, label: "Area Bersantai", img: "/images/fasilitas/area-bersantai.png"},
