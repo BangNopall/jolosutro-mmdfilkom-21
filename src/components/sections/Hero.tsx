@@ -1,6 +1,6 @@
 import { ChevronDown, MapPin } from "lucide-react";
 
-const HERO_BG = "/img/background-jolosutro.png";
+const HERO_BG = "/img/jolosutro-background.png";
 
 export function Hero() {
   return (
