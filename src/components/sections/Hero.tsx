@@ -1,6 +1,6 @@
 import { ChevronDown, MapPin } from "lucide-react";
 
-const HERO_BG = "/img/background-jolosutro.png";
+const HERO_BG = "/img/jolosutro-background.png";
 
 export function Hero() {
   return (
@@ -53,7 +53,7 @@ export function Hero() {
       >
         <ChevronDown className="h-8 w-8 animate-bounce" />
       </a>
-      <div className="absolute bottom-0 z-0 h-[12rem] w-full bg-gradient-to-t from-[#faf4e6] via-[#faf4e6]/60 to-[#faf4e6]/0"></div>
+      <div className="absolute bottom-0 z-0 h-[4rem] w-full bg-gradient-to-t from-[#faf4e6] via-[#faf4e6]/40 to-[#faf4e6]/0"></div>
     </section>
   );
 }
