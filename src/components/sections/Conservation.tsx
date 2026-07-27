@@ -21,7 +21,7 @@ export function Conservation() {
         <Reveal>
           <div className="relative">
             <img
-              src="/img/penyu-lekang.jpg"
+              src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=1200&q=80"
               alt="Penyu di pantai"
               loading="lazy"
               className="aspect-[4/5] w-full rounded-3xl object-cover shadow-soft"
