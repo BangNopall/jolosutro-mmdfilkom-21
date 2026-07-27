@@ -17,7 +17,31 @@ export const Route = createFileRoute("/blog/")({
     meta: [
       { title: "Blog — Pantai Jolosutro" },
       { name: "description", content: "Kumpulan artikel, cerita, dan berita seputar Pantai Jolosutro, Wates, Blitar." },
+      { name: "keywords", content: "Blog Pantai Jolosutro, Berita Wisata, Cerita Jolosutro, Info Pantai Selatan" },
+      { property: "og:title", content: "Blog — Pantai Jolosutro" },
+      { property: "og:description", content: "Kumpulan artikel, cerita, dan berita seputar Pantai Jolosutro, Wates, Blitar." },
+      { property: "og:url", content: "https://www.pantaijolosutro.site/blog" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Blog Pantai Jolosutro",
+          description: "Kumpulan artikel, cerita, dan berita seputar Pantai Jolosutro.",
+          url: "https://www.pantaijolosutro.site/blog",
+          publisher: {
+            "@type": "Organization",
+            name: "Pengelola Pantai Jolosutro",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://www.pantaijolosutro.site/favicon.ico"
+            }
+          }
+        })
+      }
+    ]
   }),
   component: BlogList,
   errorComponent: ({ error }) => <div className="p-8 text-destructive">{error.message}</div>,

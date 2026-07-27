@@ -31,14 +31,46 @@ export const Route = createFileRoute("/blog/$slug")({
       ? [
           { title: `${loaderData.title} — Pantai Jolosutro` },
           { name: "description", content: loaderData.excerpt || loaderData.title },
+          { name: "keywords", content: `${loaderData.title.split(' ').join(', ')}, Pantai Jolosutro, Blog, Artikel Wisata` },
+          { name: "author", content: loaderData.author || "Pengelola Pantai Jolosutro" },
           { property: "og:title", content: loaderData.title },
-          { property: "og:description", content: loaderData.excerpt || "" },
+          { property: "og:description", content: loaderData.excerpt || loaderData.title },
+          { property: "og:type", content: "article" },
+          { property: "article:published_time", content: loaderData.published_at || loaderData.created_at || "" },
+          { property: "article:author", content: loaderData.author || "" },
           ...(loaderData.cover_image
             ? [
                 { property: "og:image", content: loaderData.cover_image },
                 { name: "twitter:image", content: loaderData.cover_image },
               ]
             : []),
+        ]
+      : [],
+    scripts: loaderData
+      ? [
+          {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: loaderData.title,
+              image: loaderData.cover_image ? [loaderData.cover_image] : [],
+              datePublished: loaderData.published_at || loaderData.created_at,
+              author: {
+                "@type": "Person",
+                name: loaderData.author || "Pengelola Pantai Jolosutro"
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Pantai Jolosutro",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.pantaijolosutro.site/favicon.ico"
+                }
+              },
+              description: loaderData.excerpt || loaderData.title
+            }),
+          },
         ]
       : [],
   }),
