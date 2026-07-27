@@ -35,7 +35,7 @@ export function LocationMap() {
               </span>
               <div>
                 <div className="text-sm font-semibold">Jam Buka</div>
-                <p className="text-sm text-muted-foreground">Setiap hari, 06.00 – 18.00 WIB</p>
+                <p className="text-sm text-muted-foreground">Setiap hari, 06.00 – 22.00 WIB</p>
               </div>
             </li>
             <li className="flex gap-3">
@@ -45,7 +45,7 @@ export function LocationMap() {
               <div>
                 <div className="text-sm font-semibold">Retribusi</div>
                 <p className="text-sm text-muted-foreground">
-                  Tiket masuk GRATIS · Parkir Motor Rp 2.000 · Mobil Rp 5.000
+                  Tiket masuk GRATIS
                 </p>
               </div>
             </li>
