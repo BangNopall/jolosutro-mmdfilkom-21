@@ -3,9 +3,9 @@ import { ShieldCheck, HeartHandshake, Leaf } from "lucide-react";
 import { WavePatternBottom } from "../ui/wave-pattern/WavePattern";
 
 const GALLERY = [
-  "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1518877593221-1f28583780b4?auto=format&fit=crop&w=800&q=70",
+  "/img/konservasi-penyu.jpg",
+  "/img/pelepasanpenyu-1.png",
+  "/img/frame_0385.png",
 ];
 
 const POINTS = [

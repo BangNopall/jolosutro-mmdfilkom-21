@@ -8,7 +8,7 @@ const NAV = [
   { href: "#tentang", label: "Tentang" },
   { href: "#fasilitas", label: "Fasilitas" },
   { href: "#konservasi", label: "Konservasi Penyu" },
-  { href: "#ecopark", label: "EcoPark" },
+  { href: "#ecotury", label: "EcoTurry" },
   { href: "#kuliner", label: "Kuliner" },
   { href: "#blog", label: "Blog" },
   { href: "#kontak", label: "Kontak" },

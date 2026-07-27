@@ -1,14 +1,14 @@
 import { Reveal } from "@/components/site/Reveal";
 
 const UMKM = [
-  { name: "Warung Bu Sri", food: "Nasi Pecel & Ikan Bakar", img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=70" },
-  { name: "Kedai Segoro", food: "Sea Food & Kelapa Muda", img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=70" },
-  { name: "Warung Pak Tarno", food: "Sate Ayam & Gule", img: "https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=70" },
-  { name: "Kopi Ombak", food: "Kopi Nusantara & Cemilan", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=70" },
-  { name: "Warung Ibu Yati", food: "Bakso & Mie Ayam", img: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=70" },
-  { name: "Es Degan Jolosutro", food: "Es Kelapa & Jus Buah", img: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=70" },
+  { name: "Warung Denok", food: "Aneka Macam Seafood, Bakso & Mie ayam", price: "Rp10.000 - Rp100.000",img: "/images/kuliner/warung-denok.png" },
+  { name: "Warung Abah Gatol", food: "Nasi Campur & Lalapan, Aneka Macam Seafood, & Minuman Segar", price: "Rp10.000 - Rp50.000",img: "/images/kuliner/warung-abah-gatol.png" },
+  { name: "Warung Mbak Pila", food: "Nasi Campur & Minuman Segar",price: "Rp10.000 - Rp25.000", img: "/images/kuliner/warung-mbak-pila.png" },
+  { name: "Warung Puntodewo", food: "Spesialis Gurita & Aneka Macam Seafood", price: "Rp20.000 - Rp100.000",img: "/images/kuliner/warung-puntodewo.png" },
+  { name: "Warunge Mbak Yuni", food: "Soto, Rujak, & Minuman Segar", price: "Rp10.000 - Rp25.000",img: "/images/kuliner/warung-mbak-yuni.png" },
+  { name: "Donut Taste", food: "Aneka Donat & Camilan", price: "Rp5.000 - Rp20.000",img: "/images/kuliner/donut-taste.png" },
 ];
-
+                                                                                                                
 export function Culinary() {
   return (
     <section id="kuliner" className="bg-accent/60 py-20 md:py-28">
@@ -41,8 +41,9 @@ export function Culinary() {
                 <div className="p-5">
                   <h3 className="font-display text-lg font-bold text-foreground">{u.name}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{u.food}</p>
-                  <span className="mt-3 inline-flex rounded-full bg-secondary/30 px-3 py-1 text-xs font-semibold text-primary">
-                    UMKM Lokal
+                  <p className="mt-3 text-sm font-semibold text primary"> 💰 {u.price} </p>
+                  <span className="mt-3 inline-flex rounded-full bg-second  </p>ary/30 px-3 py-1 text-xs font-semibold text-primary">
+                    UMKM
                   </span>
                 </div>
               </article>

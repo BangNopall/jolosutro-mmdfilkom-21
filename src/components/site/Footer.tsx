@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, GlobeIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 // TikTok tidak ada di lucide — inline SVG kecil
@@ -11,10 +11,8 @@ function TikTokIcon({ className }: { className?: string }) {
 }
 
 const SOCIALS = [
-  { href: "https://instagram.com/pantaijolosutro", label: "Instagram", Icon: Instagram },
-  { href: "https://facebook.com/pantaijolosutro", label: "Facebook", Icon: Facebook },
-  { href: "https://tiktok.com/@pantaijolosutro", label: "TikTok", Icon: TikTokIcon },
-  { href: "https://youtube.com/@pantaijolosutro", label: "YouTube", Icon: Youtube },
+  { href: "https://www.instagram.com/pantaijolosutroblitar/", label: "Instagram", Icon: Instagram },
+  { href: "https://www.pantaijolosutro.net", label: "Website", Icon: GlobeIcon }
 ];
 
 export function Footer() {
@@ -52,11 +50,7 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone className="h-5 w-5 shrink-0 text-secondary" />
-              <a href="tel:+6281234567890" className="hover:text-white">+62 812-3456-7890 (Pengelola)</a>
-            </li>
-            <li className="flex gap-3">
-              <Mail className="h-5 w-5 shrink-0 text-secondary" />
-              <a href="mailto:info@pantaijolosutro.id" className="hover:text-white">info@pantaijolosutro.id</a>
+              <a href="tel:+6281376246151" className="hover:text-white">+62 812-3456-7890 (Pengelola)</a>
             </li>
           </ul>
         </div>
@@ -64,9 +58,8 @@ export function Footer() {
         <div>
           <h4 className="font-display text-lg font-semibold text-white">Jam Operasional</h4>
           <ul className="mt-4 space-y-2 text-sm text-white/80">
-            <li>Senin – Minggu: 06.00 – 18.00 WIB</li>
+            <li>Senin – Minggu: 06.00 – 22.00 WIB</li>
             <li>Tiket masuk: <span className="font-semibold text-white">GRATIS</span></li>
-            <li>Parkir: Motor Rp 2.000 • Mobil Rp 5.000</li>
           </ul>
           <div className="mt-5">
             <Link
@@ -81,7 +74,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-white/60 md:flex-row md:px-6">
-          <p>© {new Date().getFullYear()} Pengelola Wisata Pantai Jolosutro. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MMD 21 FILKOM UB. All rights reserved.</p>
           <p>
             Desa Ringinrejo · Kecamatan Wates · Kabupaten Blitar · Jawa Timur ·{" "}
             <Link to="/auth" className="underline underline-offset-2 hover:text-white">Admin</Link>

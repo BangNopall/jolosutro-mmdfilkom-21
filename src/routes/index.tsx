@@ -20,6 +20,49 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" },
       { name: "twitter:image", content: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Pantai Jolosutro",
+          url: "https://www.pantaijolosutro.site/",
+          description: "Website resmi Pantai Jolosutro, Desa Ringinrejo, Wates, Blitar. Pesona pantai selatan yang asri, bersih, ramah keluarga, dengan program konservasi penyu.",
+          publisher: {
+            "@type": "Organization",
+            name: "Pengelola Pantai Jolosutro",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://www.pantaijolosutro.site/favicon.ico"
+            }
+          }
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TouristAttraction",
+          name: "Pantai Jolosutro",
+          description: "Pesona pantai selatan yang asri, bersih, ramah keluarga, dengan program konservasi penyu.",
+          url: "https://www.pantaijolosutro.site/",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Desa Ringinrejo, Kecamatan Wates",
+            addressLocality: "Blitar",
+            addressRegion: "Jawa Timur",
+            addressCountry: "ID"
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: -8.3183,
+            longitude: 112.3828
+          },
+          publicAccess: true
+        })
+      }
+    ],
   }),
   component: HomePage,
   errorComponent: ({ error }) => (

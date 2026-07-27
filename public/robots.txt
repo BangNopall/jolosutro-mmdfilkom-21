@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /auth
 
-Sitemap: https://jolosutro-beach-guide.vercel.app/sitemap.xml
+Sitemap: https://www.pantaijolosutro.site/sitemap.xml
