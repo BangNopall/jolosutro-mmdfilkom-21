@@ -3,27 +3,27 @@ import { Sprout, BookOpen, Bike } from "lucide-react";
 import { WavePatternTop } from "../ui/wave-pattern/WavePattern";
 
 const GALLERY = [
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1470114716159-e389f8712fda?auto=format&fit=crop&w=800&q=70",
+  "/img/(EcoTury)/halaman_ecotury.jpg",
+  "/img/(EcoTury)/papan_ecotury.jpg",
+  "/img/(EcoTury)/biota_laut.jpg",
 ];
 
 const FEATURES = [
   { icon: Sprout, title: "Area Hijau", desc: "Ruang terbuka teduh dengan pepohonan pantai, cocok untuk piknik keluarga." },
   { icon: BookOpen, title: "Spot Edukasi Lingkungan", desc: "Papan informasi ekosistem pesisir & konservasi penyu untuk pengunjung." },
-  { icon: Bike, title: "Jalur Santai", desc: "Jalur pejalan kaki mengelilingi area EcoPark yang nyaman & aman." },
+  { icon: Bike, title: "Jalur Santai", desc: "Jalur pejalan kaki mengelilingi area EcoTury yang nyaman & aman." },
 ];
 
 export function EcoPark() {
   return (
-    <section id="ecopark" className="relative bg-background py-20 md:py-28">
+    <section id="ecotury" className="relative bg-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="inline-flex rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
-            EcoPark
+            EcoTury
           </span>
           <h2 className="mt-3 font-display text-3xl font-bold text-primary md:text-5xl">
-            EcoPark Pantai Jolosutro
+            EcoTury Pantai Jolosutro
           </h2>
           <p className="mt-4 text-muted-foreground md:text-lg">
             Kawasan wisata ramah lingkungan yang memadukan keindahan pantai,
@@ -50,7 +50,7 @@ export function EcoPark() {
             <img
               key={i}
               src={src}
-              alt={`Foto EcoPark ${i + 1}`}
+              alt={`Foto EcoTury ${i + 1}`}
               loading="lazy"
               className="aspect-[4/3] w-full rounded-2xl object-cover shadow-card"
             />
