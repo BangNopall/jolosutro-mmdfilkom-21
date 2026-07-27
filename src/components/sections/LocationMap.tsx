@@ -53,20 +53,13 @@ export function LocationMap() {
         </Reveal>
 
         <Reveal delay={100} className="md:col-span-3">
-          {/*
-            Wrapper dikunci ke rasio asli gambar frame (2400x1792 ≈ 4:3)
-            supaya persentase padding di bawah selalu pas dengan garis
-            border seashell, di semua ukuran layar.
-          */}
           <div className="relative mx-auto aspect-[4/3] w-full max-w-2xl">
-            {/* Layer 1: frame seashell, tampil utuh tanpa terpotong */}
             <img
               src="/seashell-frame.png"
               alt="Frame dekoratif seashell"
               className="pointer-events-none absolute inset-0 z-0 h-full w-full object-contain"
             />
 
-            {/* Layer 2: peta, diposisikan pas di area kosong tengah frame */}
             <div className="absolute inset-[20%_15%_18%_15%] overflow-hidden rounded-md z-10">
               <iframe
                 title="Peta Lokasi Pantai Jolosutro"
