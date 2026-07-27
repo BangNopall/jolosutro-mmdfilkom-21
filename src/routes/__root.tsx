@@ -93,8 +93,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: SITE_TITLE },
       { name: "twitter:description", content: SITE_DESC },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" },
-      { name: "twitter:image", content: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" },
+      { property: "og:image", content: "https://www.pantaijolosutro.site/img/jolosutro-background.png" },
+      { name: "twitter:image", content: "https://www.pantaijolosutro.site/img/jolosutro-background.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
