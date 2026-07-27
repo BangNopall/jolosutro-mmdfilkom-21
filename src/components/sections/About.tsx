@@ -2,10 +2,10 @@ import { Reveal } from "@/components/site/Reveal";
 import { WavePatternTop } from "../ui/wave-pattern/WavePattern";
 
 const GALLERY = [
-  "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=70",
+  "/img/about/about1.jpeg",
+  "/img/about/about2.png",
+  "/img/about/about3.png",
+  "/img/about/about4.png",
 ];
 
 const STATS = [
@@ -52,23 +52,49 @@ export function About() {
           </div>
         </Reveal>
 
-        <Reveal delay={100} className="grid grid-cols-2 gap-3 md:gap-4">
-          {GALLERY.map((src, i) => (
-            <div
-              key={i}
-              className={
-                "overflow-hidden rounded-3xl shadow-card " +
-                (i === 0 ? "row-span-2 h-full" : "h-40 md:h-48")
-              }
-            >
-              <img
-                src={src}
-                alt={`Foto Pantai Jolosutro ${i + 1}`}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
-              />
-            </div>
-          ))}
+        <Reveal
+          delay={100}
+          className="grid grid-cols-[1.2fr_1fr] gap-3 md:gap-4"
+        >
+          {/* Foto Besar */}
+          <div className="row-span-3 overflow-hidden rounded-3xl shadow-card">
+            <img
+              src={GALLERY[0]}
+              alt="Pantai Jolosutro"
+              loading="lazy"
+              className="h-full min-h-[520px] w-full object-cover transition-transform duration-700 hover:scale-110"
+            />
+          </div>
+
+          {/* Foto Kanan Atas */}
+          <div className="overflow-hidden rounded-3xl shadow-card h-40 md:h-44">
+            <img
+              src={GALLERY[1]}
+              alt="Pantai Jolosutro 2"
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+            />
+          </div>
+
+          {/* Foto Kanan Tengah */}
+          <div className="overflow-hidden rounded-3xl shadow-card h-40 md:h-44">
+            <img
+              src={GALLERY[2]}
+              alt="Pantai Jolosutro 3"
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+            />
+          </div>
+
+          {/* Foto Bawah */}
+          <div className="overflow-hidden rounded-3xl shadow-card h-40 md:h-44">
+            <img
+              src={GALLERY[3]}
+              alt="Pantai Jolosutro 4"
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+            />
+          </div>
         </Reveal>
       </div>
       <WavePatternTop/>

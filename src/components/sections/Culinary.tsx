@@ -1,12 +1,12 @@
 import { Reveal } from "@/components/site/Reveal";
 
 const UMKM = [
-  { name: "Warung Denok", food: "Aneka Macam Seafood, Bakso & Mie ayam", price: "Rp10.000 - Rp100.000",img: "/images/kuliner/warung-denok.png" },
-  { name: "Warung Abah Gatol", food: "Nasi Campur & Lalapan, Aneka Macam Seafood, & Minuman Segar", price: "Rp10.000 - Rp50.000",img: "/images/kuliner/warung-abah-gatol.png" },
-  { name: "Warung Mbak Pila", food: "Nasi Campur & Minuman Segar",price: "Rp10.000 - Rp25.000", img: "/images/kuliner/warung-mbak-pila.png" },
-  { name: "Warung Puntodewo", food: "Spesialis Gurita & Aneka Macam Seafood", price: "Rp20.000 - Rp100.000",img: "/images/kuliner/warung-puntodewo.png" },
-  { name: "Warunge Mbak Yuni", food: "Soto, Rujak, & Minuman Segar", price: "Rp10.000 - Rp25.000",img: "/images/kuliner/warung-mbak-yuni.png" },
-  { name: "Donut Taste", food: "Aneka Donat & Camilan", price: "Rp5.000 - Rp20.000",img: "/images/kuliner/donut-taste.png" },
+  { name: "Warung Denok", food: "Aneka Macam Seafood, Bakso & Mie ayam", price: "Rp10.000 - Rp100.000",img: "/img/kuliner/warung-denok.png" },
+  { name: "Warung Abah Gatol", food: "Nasi Campur & Lalapan, Aneka Macam Seafood, & Minuman Segar", price: "Rp10.000 - Rp50.000",img: "/img/kuliner/warung-abah-gatol.png" },
+  { name: "Warung Mbak Pila", food: "Nasi Campur & Minuman Segar",price: "Rp10.000 - Rp25.000", img: "/img/kuliner/warung-mbak-pila.png" },
+  { name: "Warung Puntodewo", food: "Spesialis Gurita & Aneka Macam Seafood", price: "Rp20.000 - Rp100.000",img: "/img/kuliner/warung-puntodewo.png" },
+  { name: "Warunge Mbak Yuni", food: "Soto, Rujak, & Minuman Segar", price: "Rp10.000 - Rp25.000",img: "/img/kuliner/warung-mbak-yuni.png" },
+  { name: "Donut Taste", food: "Aneka Donat & Camilan", price: "Rp5.000 - Rp20.000",img: "/img/kuliner/donut-taste.png" },
 ];
                                                                                                                 
 export function Culinary() {
