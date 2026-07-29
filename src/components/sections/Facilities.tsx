@@ -13,14 +13,14 @@ import {
 } from "lucide-react";
 
 const ITEMS = [
-  { icon: Camera, label: "Spot Foto",  img: "/images/fasilitas/spot-foto.png"},
-  { icon: Info, label: "Pusat Informasi Wisata", img: "/images/fasilitas/pusat-informasi-satwa.png" },
-  { icon: Bath, label: "Kamar Mandi / Toilet", img: "/images/fasilitas/kamar-mandi.png"},
-  { icon: Church, label: "Mushola", img: "/images/fasilitas/mushola.png"},
-  { icon: TreePine, label: "Area Bersantai", img: "/images/fasilitas/area-bersantai.png"},
-  { icon: Tent, label: "Area Camping", img: "/images/fasilitas/area-camping.png"},
-  { icon: Car, label: "Area Parkir Luas", img: "/images/fasilitas/area-parkir.png"},
-  { icon: Waves, label: "Pantai Bersih", img: "/images/fasilitas/pantai-bersih.png"},
+  { icon: Camera, label: "Spot Foto",  img: "/img/fasilitas/spot-foto.png"},
+  { icon: Info, label: "Pusat Informasi Wisata", img: "/img/fasilitas/pusat-informasi-satwa.png" },
+  { icon: Bath, label: "Kamar Mandi / Toilet", img: "/img/fasilitas/kamar-mandi.png"},
+  { icon: Church, label: "Mushola", img: "/img/fasilitas/mushola.png"},
+  { icon: TreePine, label: "Area Bersantai", img: "/img/fasilitas/area-bersantai.png"},
+  { icon: Tent, label: "Area Camping", img: "/img/fasilitas/area-camping.png"},
+  { icon: Car, label: "Area Parkir Luas", img: "/img/fasilitas/area-parkir.png"},
+  { icon: Waves, label: "Pantai Bersih", img: "/img/fasilitas/pantai-bersih.png"},
 ];
 
 export function Facilities() {
