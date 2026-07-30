@@ -50,7 +50,7 @@ function AuthPage() {
               <label className="mb-1 block text-sm font-medium">Email</label>
               <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
                 className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm outline-none ring-primary/20 focus:ring-4"
-                placeholder="admin@pantaijolosutro.id" />
+                placeholder="admin@pantaijolosutro.site" />
             </div>
             <div>
               <label className="mb-1 block text-sm font-medium">Password</label>
