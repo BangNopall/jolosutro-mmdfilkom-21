@@ -24,7 +24,7 @@ export function Video() {
               <iframe
                 title="Video Company Profile Pantai Jolosutro"
                 className="absolute inset-0 h-full w-full"
-                src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                src="https://www.youtube.com/embed/yKl6ouKc1aM"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
